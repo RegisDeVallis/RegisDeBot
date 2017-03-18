@@ -24,10 +24,10 @@ public class RegisDeBot
     public RegisDeBot()
     {
         //For the main bot
-        String token = "MjkwMTk1MTA4NjgxMzUxMTc5.C6XZQw.gsYSWnqLjHx3nvrfRjyGOG8n5PM";
+        //String token = "MjkwMTk1MTA4NjgxMzUxMTc5.C6XZQw.gsYSWnqLjHx3nvrfRjyGOG8n5PM";
         
         //for the test bot
-        //String token = "MjkyNDE2MjY1NzExMTI0NDgx.C63tbA.xCb7PZR5LSXMZNtT-mwBMGZr2Gg";
+        String token = "MjkyNDE2MjY1NzExMTI0NDgx.C63tbA.xCb7PZR5LSXMZNtT-mwBMGZr2Gg";
         
         api = Javacord.getApi(token, true);
         // connect

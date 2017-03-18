@@ -105,6 +105,8 @@ public class ParseCommand
             new Invite(message);
         else if(command.equals("shutup"))
             new Shutup(message);
+        else if(command.equals("info"))
+            new Info(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             
