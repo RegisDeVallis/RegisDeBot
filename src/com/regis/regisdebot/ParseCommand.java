@@ -107,6 +107,8 @@ public class ParseCommand
             new Shutup(message);
         else if(command.equals("info"))
             new Info(message);
+        else if(command.equals("home"))
+            new Home(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             
