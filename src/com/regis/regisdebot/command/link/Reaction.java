@@ -7,6 +7,7 @@ import de.btobastian.javacord.entities.message.Message;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -61,6 +62,12 @@ public class Reaction
         {
             names.add(link.content());
             links.add(link.string("http"));
+        }
+        
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Reaction.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

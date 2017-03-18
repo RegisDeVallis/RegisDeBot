@@ -94,6 +94,12 @@ public class CheckUserMsgLeaderboard
             ids.add(child.string("id"));
             msgs.add(Long.parseLong(child.content()));
         }
+        
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(CheckUserMsgLeaderboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     private void save()

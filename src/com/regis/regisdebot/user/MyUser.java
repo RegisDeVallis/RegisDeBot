@@ -70,41 +70,39 @@ public class MyUser
         {
             Element data = new Element("data");
             Attribute name = new Attribute("name", "filler");
-             
-            if(i == 0)
-            {
-                name.setValue("id");
-                data.appendChild(user.getId());
-            }
             
-            if(i == 1)
+            switch(i)
             {
-                name.setValue("name");
-                data.appendChild(user.getName());
-            }
-            
-            if(i == 2)
-            {
-                name.setValue("joined");
-                data.appendChild(date.toString());
-            }
-            
-            if(i == 3)
-            {
-                name.setValue("xp");
-                data.appendChild(Long.toString(xp));
-            }
-            
-            if(i == 4)
-            {
-                name.setValue("xpreserve");
-                data.appendChild(Long.toString(xpReserve));
-            }
-            
-            if(i == 5)
-            {
-                name.setValue("messages");
-                data.appendChild(Long.toString(messages));
+                case 0:
+                    name.setValue("name");
+                    data.appendChild(user.getName());
+                    break;
+                    
+                case 1:
+                    name.setValue("id");
+                    data.appendChild(user.getId());
+                    break;
+                    
+                case 2:
+                    name.setValue("joined");
+                    data.appendChild(date.toString());
+                    break;
+                    
+                case 3:
+                     name.setValue("xp");
+                    data.appendChild(Long.toString(xp));
+                    break;
+                    
+                case 4:
+                    name.setValue("xpreserve");
+                    data.appendChild(Long.toString(xpReserve));
+                    break;
+                    
+                case 5:
+                    name.setValue("messages");
+                    data.appendChild(Long.toString(messages));
+                    break;
+                    
             }
             
             data.addAttribute(name);
@@ -151,7 +149,6 @@ public class MyUser
         
         
         XML userXML = new XML(fileInput, "user");
-        //ArrayList<XML> childrenList = userXML.children("data");
         
         for(XML child : userXML.children("data"))
         {
@@ -165,7 +162,11 @@ public class MyUser
                 messages = Long.parseLong(child.content());
         }
         
-        //xpReserve = Integer.parseInt(userXML.child("xpreserve").content());
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(MyUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public long getXP()
