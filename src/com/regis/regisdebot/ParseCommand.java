@@ -124,6 +124,8 @@ public class ParseCommand
             new Mute(message);
         else if(command.equals("unmute"))
             new UnMute(message);
+        else if(command.equals("getid"))
+            new GetID(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             

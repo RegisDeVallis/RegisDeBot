@@ -1,5 +1,6 @@
 package com.regis.regisdebot.command;
 
+import com.regis.regisdebot.botutil.GetName;
 import de.btobastian.javacord.entities.Server;
 import de.btobastian.javacord.entities.message.Message;
 import de.btobastian.javacord.entities.permissions.Permissions;
@@ -20,6 +21,7 @@ public class Kick
             {
                 server.kickUser(message.getMentions().get(0));
                 success = true;
+                message.reply("Kicked " + new GetName(message.getMentions().get(0), message.getChannelReceiver().getServer()));
             }
         
         if(!success)

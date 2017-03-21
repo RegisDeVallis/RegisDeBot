@@ -53,6 +53,7 @@ public class Help
                 + "~issue - Add an issue with the bot. Usage: ~issue ISSUE \n"
                 + "~idea - Add an idea. Usage: ~idea IDEA \n"
                 + "~github - Link to the git."
+                + "~getid - Get yours or somebody elses ID. \n"
                 + "```";
         
         new LongMessage(message, text);

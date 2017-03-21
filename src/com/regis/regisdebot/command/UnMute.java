@@ -1,5 +1,6 @@
 package com.regis.regisdebot.command;
 
+import com.regis.regisdebot.botutil.GetName;
 import com.regis.regisdebot.command.settings.ServerSettings;
 import de.btobastian.javacord.entities.Server;
 import de.btobastian.javacord.entities.message.Message;
@@ -15,7 +16,7 @@ public class UnMute
             if(roles.getName().equals("Admin"))
             {
                 new ServerSettings(server).removeMute(message.getMentions().get(0));
-                message.reply("Unmuted " + message.getMentions().get(0).getName());
+                message.reply("Unmuted " + new GetName(message.getMentions().get(0), message.getChannelReceiver().getServer()));
                 unmute = true;
             }
         if(!unmute)
