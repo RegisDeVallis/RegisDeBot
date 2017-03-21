@@ -119,4 +119,15 @@ public class ServerSettings
             Logger.getLogger(ServerSettings.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public String getRules()
+    {
+        return rules;
+    }
+    
+    public void setRules(String r)
+    {
+        rules = r;
+        save();
+    }
 }
