@@ -19,6 +19,7 @@ public class Help
                 + "~updatemsgleaderboards - Update all the message leaderboards. \n"
                 + "~updatexpleaderboards - Update all the XP leaderboards. \n"
                 + "~issues - View the issues. \n"
+                + "~ideas - View the ideas. \n"
                 + "``` \n"
                 
                 + "**Admin Commands** ```"
@@ -48,6 +49,8 @@ public class Help
                 + "~servers - View the server count. \n"
                 + "~invitetest - Get invited to the test server. \n"
                 + "~issue - Add an issue with the bot. Usage: ~issue ISSUE \n"
+                + "~idea - Add an idea. Usage: ~idea IDEA \n"
+                + "~github - Link to the git."
                 + "```";
         
         new LongMessage(message, text);

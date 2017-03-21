@@ -116,6 +116,8 @@ public class ParseCommand
             new Idea(message);
         else if(command.equals("ideas"))
             new Ideas(message);
+        else if(command.equals("github"))
+            new Github(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             
