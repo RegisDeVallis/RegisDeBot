@@ -4,6 +4,7 @@ import com.regis.regisdebot.command.xp.*;
 import com.regis.regisdebot.command.leaderboard.*;
 import com.regis.regisdebot.command.link.*;
 import com.regis.regisdebot.command.*;
+import com.regis.regisdebot.command.feedback.*;
 import com.regis.regisdebot.command.guide.*;
 import com.regis.regisdebot.command.settings.*;
 import de.btobastian.javacord.DiscordAPI;
@@ -107,6 +108,14 @@ public class ParseCommand
             new Rules(message);
         else if(command.equals("setrules"))
             new SetRules(message);
+        else if(command.equals("issue"))
+            new Issue(message);
+        else if(command.equals("issues"))
+            new Issues(message);
+        else if(command.equals("idea"))
+            new Idea(message);
+        else if(command.equals("ideas"))
+            new Ideas(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             

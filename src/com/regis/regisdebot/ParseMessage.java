@@ -47,7 +47,7 @@ public class ParseMessage
         }
         else
             if(message.getAttachments().isEmpty())
-                if(message.getContent().equals("~unshutup"))
+                if(message.getContent().toLowerCase().equals("~unshutup"))
                     new UnShutup(message);
         
         
