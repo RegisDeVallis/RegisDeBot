@@ -6,6 +6,7 @@ import de.btobastian.javacord.entities.message.Message;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,6 +56,12 @@ public class Guide
         {
             names.add(guide.string("name"));
             guides.add(guide.content());
+        }
+        
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Guide.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

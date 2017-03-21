@@ -67,6 +67,12 @@ public class RemoveGuide
             names.add(guide.string("name"));
             guides.add(guide.content());
         }
+        
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(RemoveGuide.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     private void save()
