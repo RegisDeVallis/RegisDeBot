@@ -94,6 +94,12 @@ public class CheckUserLeaderboard
             ids.add(child.string("id"));
             xps.add(Long.parseLong(child.content()));
         }
+        
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(CheckUserLeaderboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     private void save()

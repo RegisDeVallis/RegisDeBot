@@ -73,6 +73,12 @@ public class AddGuide
             names.add(guide.string("name"));
             guides.add(guide.content());
         }
+        
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AddGuide.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     private void save()

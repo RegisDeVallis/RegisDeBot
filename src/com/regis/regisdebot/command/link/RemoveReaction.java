@@ -71,6 +71,12 @@ public class RemoveReaction
             names.add(link.content());
             links.add(link.string("http"));
         }
+        
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(RemoveReaction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void save() 

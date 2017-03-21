@@ -47,10 +47,7 @@ public class AddLink
             
             System.out.println("Added link " + name + " which links to " + link);
             message.reply("Added link " + name + " which links to " + link);
-        }
-        
-        
-        
+        }  
     }
 
     private void load() 
@@ -69,6 +66,12 @@ public class AddLink
         {
             names.add(link.content());
             links.add(link.string("http"));
+        }
+        
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AddLink.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

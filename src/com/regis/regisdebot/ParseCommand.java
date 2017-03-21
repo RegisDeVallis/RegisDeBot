@@ -1,17 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.regis.regisdebot;
 
-import com.regis.regisdebot.command.xp.XP;
-import com.regis.regisdebot.command.xp.AddXP;
+import com.regis.regisdebot.command.xp.*;
 import com.regis.regisdebot.command.leaderboard.*;
 import com.regis.regisdebot.command.link.*;
 import com.regis.regisdebot.command.*;
 import com.regis.regisdebot.command.guide.*;
+import com.regis.regisdebot.command.settings.*;
 import de.btobastian.javacord.DiscordAPI;
 import de.btobastian.javacord.entities.message.Message;
 
@@ -105,6 +99,14 @@ public class ParseCommand
             new Invite(message);
         else if(command.equals("shutup"))
             new Shutup(message);
+        else if(command.equals("info"))
+            new Info(message);
+        else if(command.equals("home"))
+            new Home(message);
+        else if(command.equals("rules"))
+            new Rules(message);
+        else if(command.equals("setrules"))
+            new SetRules(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             

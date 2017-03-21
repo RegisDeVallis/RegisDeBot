@@ -50,10 +50,7 @@ public class AddReaction
             
             System.out.println("Added reaction " + name + " which links to " + link);
             message.reply("Added reaction " + name + " which links to " + link);
-        }
-        
-        
-        
+        }   
     }
 
     private void load() 
@@ -72,6 +69,12 @@ public class AddReaction
         {
             names.add(link.content());
             links.add(link.string("http"));
+        }
+        
+        try {
+            fileInput.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AddReaction.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
