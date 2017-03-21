@@ -26,6 +26,8 @@ public class Help
                 + "~addxp - Add XP to a user. Works the same as ~xp, but no reserve is taken away. \n"
                 + "~kick - Kick the user. Usage ~kick @USER \n"
                 + "~setrules - Set the server rules. Usage ~setrules RULES \n"
+                + "~mute - Mute a user. Usage ~mute @USER \n"
+                + "~unmute - Unmute a user. Usage ~unmute @USER \n"
                 + "``` \n"
                 
                 + "**Common Commands ** ```"

@@ -118,6 +118,12 @@ public class ParseCommand
             new Ideas(message);
         else if(command.equals("github"))
             new Github(message);
+        else if(command.equals("invitetest"))
+            new InviteTest(message);
+        else if(command.equals("mute"))
+            new Mute(message);
+        else if(command.equals("unmute"))
+            new UnMute(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             

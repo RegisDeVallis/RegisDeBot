@@ -30,7 +30,7 @@ public class Links
             
             for(String name : names)
                 text += " - " + name + "\n";
-            text = "```";
+            text += "```";
             
             message.reply(text);
         }

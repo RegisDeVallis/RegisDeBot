@@ -33,7 +33,7 @@ public class Link
                 String name = message.getContent().substring(message.getContent().indexOf(" ") + 1).toLowerCase();
                 if(names.contains(name))
                 {
-                    message.reply("*" + name + ":* \n" + links.get(names.indexOf(name)));
+                    message.reply("**" + name + ":** \n" + links.get(names.indexOf(name)));
                 }
                 else
                     message.reply("I cant seem to find the link " + name + ". Are you sure you typed it correctly?");
