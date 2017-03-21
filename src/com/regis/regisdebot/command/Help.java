@@ -18,6 +18,8 @@ public class Help
                 + "~updateleaderboards - Update all the leaderboards. \n"
                 + "~updatemsgleaderboards - Update all the message leaderboards. \n"
                 + "~updatexpleaderboards - Update all the XP leaderboards. \n"
+                + "~issues - View the issues. \n"
+                + "~ideas - View the ideas. \n"
                 + "``` \n"
                 
                 + "**Admin Commands** ```"
@@ -45,6 +47,10 @@ public class Help
                 + "~msgleaderboard - Vew the top message senders on the server. Works the same as ~leaderboard \n"
                 + "~randmeme - View a random dank meme. \n"
                 + "~servers - View the server count. \n"
+                + "~invitetest - Get invited to the test server. \n"
+                + "~issue - Add an issue with the bot. Usage: ~issue ISSUE \n"
+                + "~idea - Add an idea. Usage: ~idea IDEA \n"
+                + "~github - Link to the git."
                 + "```";
         
         new LongMessage(message, text);

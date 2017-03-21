@@ -1,6 +1,7 @@
 package com.regis.regisdebot;
 
 import static com.regis.regisdebot.Main.Bot;
+import com.regis.regisdebot.botutil.Subreddit;
 import com.regis.regisdebot.command.UnShutup;
 import com.regis.regisdebot.user.MyUser;
 import de.btobastian.javacord.DiscordAPI;
@@ -43,11 +44,13 @@ public class ParseMessage
                     parseCommand = new ParseCommand(message, api);
                 else if(message.getMentions().contains(message.getChannelReceiver().getServer().getMemberById("290195108681351179"))) //if it mentions the bot
                     message.reply("Wat");
+                if(message.getContent().contains("r/"))
+                    new Subreddit(message);
             }
         }
         else
             if(message.getAttachments().isEmpty())
-                if(message.getContent().equals("~unshutup"))
+                if(message.getContent().toLowerCase().equals("~unshutup"))
                     new UnShutup(message);
         
         
