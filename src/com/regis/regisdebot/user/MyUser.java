@@ -38,6 +38,7 @@ public class MyUser
     private long xpReserve = 0;
     private String dateJoined;
     private long messages = 0;
+    private int rank = 0;
     
     public MyUser(User user, Server server)
     {
@@ -66,7 +67,7 @@ public class MyUser
         //have fun reading this
         Element xml = new Element("user");
         
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 7; i++)
         {
             Element data = new Element("data");
             Attribute name = new Attribute("name", "filler");
@@ -101,6 +102,11 @@ public class MyUser
                 case 5:
                     name.setValue("messages");
                     data.appendChild(Long.toString(messages));
+                    break;
+                    
+                case 6:
+                    name.setValue("rank");
+                    data.appendChild(Integer.toString(rank));
                     break;
                     
             }
@@ -160,6 +166,8 @@ public class MyUser
                 xpReserve = Long.parseLong(child.content());
             if(child.string("name").equals("messages"))
                 messages = Long.parseLong(child.content());
+            if(child.string("name").equals("rank"))
+                rank = Integer.parseInt(child.content());
         }
         
         try {
@@ -233,5 +241,16 @@ public class MyUser
     public Server getServer()
     {
         return server;
+    }
+    
+    public int getRank()
+    {
+        return rank;
+    }
+    
+    public void setRank(int r)
+    {
+        rank = r;
+        save();
     }
 }

@@ -23,26 +23,40 @@ public class Help
                 + "``` \n"
                 
                 + "**Admin Commands** ```"
+                + "~setrank - Add a role to the rank list. Type ~rankinfo for more information. Usage: ~setrank RANKNUM ROLENAME  \n"
+                + "~removerank - Remove a role from the rank list. Usage: ~removerank ROLENAME \n"
+                + "``` \n"
+                
+                + "**Mod Commands** ```"
                 + "~addxp - Add XP to a user. Works the same as ~xp, but no reserve is taken away. \n"
                 + "~kick - Kick the user. Usage ~kick @USER \n"
                 + "~setrules - Set the server rules. Usage ~setrules RULES \n"
+                + "~mute - Mute a user. Usage ~mute @USER \n"
+                + "~unmute - Unmute a user. Usage ~unmute @USER \n"
                 + "``` \n"
                 
-                + "**Common Commands ** ```"
+                + "**Trusted Commands** ```"
+                + "~addlink - Add a link. Usage: ~addlink \"NAME\" LINK \n"
+                + "~removelink ` Remove a link. Usage: ~removelink NAME \n"
+                + "~addreaction - Add a reaction. Usage: ~addlink \"NAME\" LINK \n"
+                + "~removereaction - Remove a reaction. Usage: ~removelink NAME \n"
+                + "~addguide - Add a guide. Usage: ~addguide NAME GUIDE \n"
+                + "~removeguide - Remove a guide. Usage: ~removeguide NAME \n"
+                + "``` \n";
+                
+                String text2 = "**Common Commands ** ```"
                 + "~ping - Pong! \n"
                 + "~echo - Echoes whatever is put after it. \n"
-                + "~link - Link a link. - Usage: ~link \"NAME\" \n"
+                + "~link - Link a link. Usage: ~link \"NAME\" \n"
                 + "~links - View all the links on the server. \n"
-                + "~addlink - Add a link. - Usage: ~addlink \"NAME\" LINK \n"
-                + "~removelink ` Remove a link. - Usage: ~removelink NAME \n"
-                + "~reaction - Link a reaction. - Usage: ~reaction \"NAME\" \n"
+                + "~reaction - Link a reaction. Usage: ~reaction \"NAME\" \n"
                 + "~reactions - View all the reactions on the server. \n"
-                + "~addreaction - Add a reaction. - Usage: ~addlink \"NAME\" LINK \n"
-                + "~removereaction - Remove a reaction. - Usage: ~removelink NAME \n"
+                + "~guide - View a guide. Usage: ~guide NAME \n"
+                + "~guides - View all the guides. \n"
                 + "~whoareyou - Find out who the bot is. \n"
                 + "~whoami - Find out who you are. \n"
                 + "~joined - Find out when you joined. \n"
-                + "~xp - Give XP to people.  - Usage: ~xp @NAME # \n"
+                + "~xp - Give XP to people. Usage: ~xp @NAME # \n"
                 + "~leaderboard - View the top XP holders on the server. Add a number after it up to 100 to view the top for that number. \n"
                 + "~msgleaderboard - Vew the top message senders on the server. Works the same as ~leaderboard \n"
                 + "~randmeme - View a random dank meme. \n"
@@ -51,9 +65,13 @@ public class Help
                 + "~issue - Add an issue with the bot. Usage: ~issue ISSUE \n"
                 + "~idea - Add an idea. Usage: ~idea IDEA \n"
                 + "~github - Link to the git."
+                + "~getid - Get yours or somebody elses ID. \n"
                 + "```";
+                
+                message.reply(text2);
+                message.reply(text);
         
-        new LongMessage(message, text);
+        
         
         
     }

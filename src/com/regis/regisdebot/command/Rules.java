@@ -1,7 +1,7 @@
 package com.regis.regisdebot.command;
 
 import com.regis.regisdebot.botutil.LongMessage;
-import com.regis.regisdebot.command.settings.ServerSettings;
+import com.regis.regisdebot.server.ServerSettings;
 import de.btobastian.javacord.entities.message.Message;
 
 public class Rules 

@@ -13,13 +13,14 @@ import de.btobastian.javacord.listener.message.MessageCreateListener;
 import de.btobastian.javacord.listener.server.ServerMemberAddListener;
 import de.btobastian.javacord.listener.server.ServerMemberRemoveListener;
 import java.util.ArrayList;
+import java.util.List;
 
 public class RegisDeBot
 {
     public DiscordAPI api;
     MyUser myUser;
     RemoveUser removeUser;
-    public ArrayList<Server> shutups = new ArrayList();
+    public ArrayList<Server> shutups = new ArrayList(); 
     
     public RegisDeBot()
     {

@@ -38,7 +38,6 @@ public class CheckUserLeaderboard
         if(ids.contains(ID)) //if user is already on the leaderboard, remove them
         {
             int index = ids.indexOf(ID);
-            
             ids.remove(index);
             xps.remove(index);
         }

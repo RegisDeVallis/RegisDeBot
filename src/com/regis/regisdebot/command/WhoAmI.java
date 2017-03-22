@@ -1,5 +1,6 @@
 package com.regis.regisdebot.command;
 
+import com.regis.regisdebot.botutil.GetName;
 import de.btobastian.javacord.entities.message.Message;
 
 public class WhoAmI 
@@ -10,10 +11,7 @@ public class WhoAmI
             message.reply("You're my Dad!");
         else
         {
-            if(message.getAuthor().getNickname(message.getChannelReceiver().getServer()) == null)
-                message.reply("You are " + message.getAuthor().getName() + ".");
-            else
-                message.reply("You are " + message.getAuthor().getNickname(message.getChannelReceiver().getServer()) + ".");
+            message.reply("You are " + new GetName(message.getAuthor(), message.getChannelReceiver().getServer()));
         }
         
     }
