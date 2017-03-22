@@ -1,5 +1,6 @@
 package com.regis.regisdebot.command.guide;
 
+import com.regis.regisdebot.server.rank.Rank;
 import com.regis.regisdebot.user.MyUser;
 import com.regis.regisdebot.util.XML;
 import de.btobastian.javacord.entities.message.Message;
@@ -30,7 +31,7 @@ public class RemoveGuide
 
         if(message.getContent().trim().indexOf(" ") == -1)
             message.reply("Usage `~removeguide NAME`");
-        else
+        else if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() >= 3)
         {
             if(file.exists())
             {
@@ -48,6 +49,8 @@ public class RemoveGuide
             else
                 message.reply("Looks like there are no guides to remove!");
         }
+        else
+            message.reply("Looks like you don't have permission to do that.");
     }
     
     private void load()

@@ -1,5 +1,6 @@
 package com.regis.regisdebot.command.link;
 
+import com.regis.regisdebot.server.rank.Rank;
 import com.regis.regisdebot.user.MyUser;
 import com.regis.regisdebot.util.XML;
 import de.btobastian.javacord.entities.Server;
@@ -25,7 +26,7 @@ public class AddReaction
         
         if(message.getContent().trim().indexOf(" ") == -1)
             message.reply("Usage: `~addreaction \"NAME\" LINK`");
-        else
+        else if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() >= 3)
         {
             //get the name
             name = message.getContent().substring(message.getContent().indexOf("\"") + 1);
@@ -50,7 +51,9 @@ public class AddReaction
             
             System.out.println("Added reaction " + name + " which links to " + link);
             message.reply("Added reaction " + name + " which links to " + link);
-        }   
+        }
+        else
+            message.reply("Looks like you don't have permission to do that.");
     }
 
     private void load() 
