@@ -1,5 +1,6 @@
 package com.regis.regisdebot;
 
+import com.regis.regisdebot.command.GetRoleID;
 import com.regis.regisdebot.server.SetRules;
 import com.regis.regisdebot.command.xp.*;
 import com.regis.regisdebot.command.leaderboard.*;
@@ -135,6 +136,18 @@ public class ParseCommand
             new UpdateRanks(message);
         else if(command.equals("rankinfo"))
             new RankInfo(message);
+        else if(command.equals("lenny"))
+            new Lenny(message);
+        else if(command.equals("online"))
+            new Online(message);
+        else if(command.equals("members"))
+            new Members(message);
+        else if(command.equals("setxp"))
+            new SetXP(message);
+        else if(command.equals("getroleid"))
+            new GetRoleID(message);
+        else if(command.equals("globalmsg"))
+            new GlobalMsg(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             

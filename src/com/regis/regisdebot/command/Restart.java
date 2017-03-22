@@ -1,6 +1,7 @@
 package com.regis.regisdebot.command;
 
 import com.regis.regisdebot.Main;
+import com.regis.regisdebot.server.rank.Rank;
 import de.btobastian.javacord.entities.Channel;
 import de.btobastian.javacord.entities.Server;
 import de.btobastian.javacord.entities.message.Message;
@@ -11,7 +12,7 @@ public class Restart
 {
     public Restart(Message message)
     {
-        if(message.getAuthor().getId().equals("111992351378984960")) //if its me
+        if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() == 11) //if its me
         {
             message.delete();
             message.reply("This action is currently disabled because api.disconnect() is broken.");

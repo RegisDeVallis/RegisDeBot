@@ -1,6 +1,7 @@
 package com.regis.regisdebot.command.leaderboard;
 
 import com.regis.regisdebot.Main;
+import com.regis.regisdebot.server.rank.Rank;
 import com.regis.regisdebot.user.MyUser;
 import de.btobastian.javacord.entities.Channel;
 import de.btobastian.javacord.entities.Server;
@@ -12,7 +13,7 @@ public class UpdateMsgLeaderboards
 {
     public UpdateMsgLeaderboards(Message message)
     {
-        if(message.getAuthor().getId().equals("111992351378984960")) //make sure its me
+        if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() == 11) //make sure its me
         {
             message.reply("Updating message leaderboards...");
             

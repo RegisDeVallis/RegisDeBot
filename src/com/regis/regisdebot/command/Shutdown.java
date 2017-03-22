@@ -1,6 +1,7 @@
 package com.regis.regisdebot.command;
 
 import com.regis.regisdebot.*;
+import com.regis.regisdebot.server.rank.Rank;
 import de.btobastian.javacord.entities.message.Message;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -9,7 +10,7 @@ public class Shutdown
 {
     public Shutdown(Message message)
     {
-        if(message.getAuthor().getId().equals("111992351378984960")) //if its me
+        if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() == 11) //if its me
         {
             message.delete();
         

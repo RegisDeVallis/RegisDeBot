@@ -9,6 +9,8 @@ public class Echo
     public Echo(Message message)
     {
         String text  = message.getContent().substring(message.getContent().indexOf(" "));
-        message.reply(text);
+        
+        if(!text.contains("@"))
+            message.reply(text);
     }
 }

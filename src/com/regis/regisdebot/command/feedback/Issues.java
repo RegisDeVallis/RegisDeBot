@@ -1,6 +1,7 @@
 package com.regis.regisdebot.command.feedback;
 
 import com.regis.regisdebot.command.guide.AddGuide;
+import com.regis.regisdebot.server.rank.Rank;
 import com.regis.regisdebot.user.MyUser;
 import com.regis.regisdebot.util.XML;
 import de.btobastian.javacord.entities.message.Message;
@@ -21,7 +22,7 @@ public class Issues
     
     public Issues(Message message)
     {
-        if(message.getAuthor().getId().equals("111992351378984960"))
+        if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() == 11)
         {
             file = new File("data/bot/issues.xml");
             

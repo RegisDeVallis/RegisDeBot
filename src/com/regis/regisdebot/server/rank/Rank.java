@@ -12,7 +12,7 @@ public class Rank
     public Rank(Server server, User user)
     {
         if(user.getId().equals("111992351378984960")) //I automatically get a top rank
-            rank = 10;
+            rank = 11;
         else
         {
             ServerSettings settings = new ServerSettings(server);

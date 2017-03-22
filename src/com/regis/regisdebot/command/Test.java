@@ -1,13 +1,14 @@
 package com.regis.regisdebot.command;
 
 import com.regis.regisdebot.botutil.LongMessage;
+import com.regis.regisdebot.server.rank.Rank;
 import de.btobastian.javacord.entities.message.Message;
 
 public class Test 
 {
     public Test(Message message)
     {
-        if(message.getAuthor().getId().equals("111992351378984960")) //make sure its me
+        if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() == 11) //make sure its me
         {
             
         }

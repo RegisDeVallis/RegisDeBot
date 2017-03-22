@@ -8,7 +8,7 @@ public class UpdateRanks
 {
     public UpdateRanks(Message message)
     {
-        if(message.getAuthor().getId().equals("111992351378984960"))
+        if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() == 11)
         {
             new CheckRanks(message.getChannelReceiver().getServer());
             message.reply("Updated all the ranks.");

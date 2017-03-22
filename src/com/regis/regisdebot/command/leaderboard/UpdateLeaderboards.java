@@ -1,12 +1,13 @@
 package com.regis.regisdebot.command.leaderboard;
 
+import com.regis.regisdebot.server.rank.Rank;
 import de.btobastian.javacord.entities.message.Message;
 
 public class UpdateLeaderboards 
 {
     public UpdateLeaderboards(Message message)
     {
-        if(message.getAuthor().getId().equals("111992351378984960")) //make sure its me
+        if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() == 11) //make sure its me
         {
             new UpdateMsgLeaderboards(message);
             new UpdateXPLeaderboards(message);

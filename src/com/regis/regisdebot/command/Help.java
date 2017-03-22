@@ -20,6 +20,7 @@ public class Help
                 + "~updatexpleaderboards - Update all the XP leaderboards. \n"
                 + "~issues - View the issues. \n"
                 + "~ideas - View the ideas. \n"
+                + "~globalmsg - Send a global message \n"
                 + "``` \n"
                 
                 + "**Admin Commands** ```"
@@ -29,6 +30,7 @@ public class Help
                 
                 + "**Mod Commands** ```"
                 + "~addxp - Add XP to a user. Works the same as ~xp, but no reserve is taken away. \n"
+                + "~setxp - Set a users XP. Works the same as ~addxp \n"
                 + "~kick - Kick the user. Usage ~kick @USER \n"
                 + "~setrules - Set the server rules. Usage ~setrules RULES \n"
                 + "~mute - Mute a user. Usage ~mute @USER \n"
@@ -44,7 +46,8 @@ public class Help
                 + "~removeguide - Remove a guide. Usage: ~removeguide NAME \n"
                 + "``` \n";
                 
-                String text2 = "**Common Commands ** ```"
+        String text2 = "**Common Commands ** ```"
+                        
                 + "~ping - Pong! \n"
                 + "~echo - Echoes whatever is put after it. \n"
                 + "~link - Link a link. Usage: ~link \"NAME\" \n"
@@ -66,10 +69,14 @@ public class Help
                 + "~idea - Add an idea. Usage: ~idea IDEA \n"
                 + "~github - Link to the git."
                 + "~getid - Get yours or somebody elses ID. \n"
+                + "~getroleid - Get the ID of a rank. \n"
+                + "~lenny - Lenny face. \n"
+                + "~online - See how many members are online. \n"
+                + "~members - View the member count. \n"
                 + "```";
                 
-                if(message.reply(text).isDone())
-                    message.reply(text2);
+        if(message.reply(text).isDone())
+            message.reply(text2);
         
         
         
