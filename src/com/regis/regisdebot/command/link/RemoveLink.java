@@ -1,5 +1,6 @@
 package com.regis.regisdebot.command.link;
 
+import com.regis.regisdebot.server.rank.Rank;
 import com.regis.regisdebot.user.MyUser;
 import com.regis.regisdebot.util.XML;
 import de.btobastian.javacord.entities.Server;
@@ -32,7 +33,7 @@ public class RemoveLink
 
         if(message.getContent().trim().indexOf(" ") == -1)
             message.reply("Usage: `~removelink NAME`");
-        else
+        else if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() >= 3)
         {
             if(file.exists())
             {
@@ -50,6 +51,8 @@ public class RemoveLink
             else
                 message.reply("Looks like there are no links to remove!");
         }
+        else
+            message.reply("Looks like you don't have permission to do that.");
     }
     
     private void load() 

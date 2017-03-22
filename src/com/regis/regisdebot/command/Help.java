@@ -68,8 +68,8 @@ public class Help
                 + "~getid - Get yours or somebody elses ID. \n"
                 + "```";
                 
-                message.reply(text2);
-                message.reply(text);
+                if(message.reply(text).isDone())
+                    message.reply(text2);
         
         
         

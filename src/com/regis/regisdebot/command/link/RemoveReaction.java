@@ -1,5 +1,6 @@
 package com.regis.regisdebot.command.link;
 
+import com.regis.regisdebot.server.rank.Rank;
 import com.regis.regisdebot.user.MyUser;
 import com.regis.regisdebot.util.XML;
 import de.btobastian.javacord.entities.Server;
@@ -34,7 +35,7 @@ public class RemoveReaction
 
         if(message.getContent().trim().indexOf(" ") == -1)
             message.reply("Usage: `~removereaction NAME`");
-        else
+        else if(new Rank(message.getChannelReceiver().getServer(), message.getAuthor()).get() >= 3)
         {
             if(file.exists())
             {
@@ -52,6 +53,8 @@ public class RemoveReaction
             else
                 message.reply("Looks like there are no reactions to remove!");
         }
+        else
+            message.reply("Looks like you don't have permission to do that.");
     }
     
     private void load() 
