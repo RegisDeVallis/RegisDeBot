@@ -1,5 +1,6 @@
 package com.regis.regisdebot.command.xp;
 
+import com.regis.regisdebot.server.rank.Rank;
 import com.regis.regisdebot.user.MyUser;
 import de.btobastian.javacord.entities.message.Message;
 import de.btobastian.javacord.entities.permissions.Role;
@@ -19,15 +20,9 @@ public class AddXP
             else
             {
                 myUser = new MyUser(message.getMentions().get(0), message.getChannelReceiver().getServer());
-            
-                boolean success = false;
-                for(Role roles : message.getAuthor().getRoles(message.getChannelReceiver().getServer()))
-                    if(roles.getName().equals("Admin"))
-                    {
-                        success = true;
-                    }
+                
 
-                if(success) //if admin
+                if(new Rank(myUser).get() >= 8) //if admin
                 {
                     String text = message.getContent().trim();
                     text = text.substring(text.indexOf(" ") + 1);

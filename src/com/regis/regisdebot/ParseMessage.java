@@ -3,7 +3,7 @@ package com.regis.regisdebot;
 import static com.regis.regisdebot.Main.Bot;
 import com.regis.regisdebot.botutil.Subreddit;
 import com.regis.regisdebot.command.UnShutup;
-import com.regis.regisdebot.command.settings.ServerSettings;
+import com.regis.regisdebot.server.ServerSettings;
 import com.regis.regisdebot.user.MyUser;
 import de.btobastian.javacord.DiscordAPI;
 import de.btobastian.javacord.entities.Server;

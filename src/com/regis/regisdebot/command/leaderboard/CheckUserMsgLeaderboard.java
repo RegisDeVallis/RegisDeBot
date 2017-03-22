@@ -38,7 +38,6 @@ public class CheckUserMsgLeaderboard
         if(ids.contains(ID)) //if user is already on the leaderboard, remove them
         {
             int index = ids.indexOf(ID);
-            System.out.println("User with ID of " + ids.get(index) + " and name of " + myUser.getUser().getName() + "is already on the message leaderboard.");
             ids.remove(index);
             msgs.remove(index);
         }

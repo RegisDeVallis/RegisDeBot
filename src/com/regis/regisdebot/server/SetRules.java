@@ -1,4 +1,4 @@
-package com.regis.regisdebot.command.settings;
+package com.regis.regisdebot.server;
 
 import com.regis.regisdebot.command.Rules;
 import de.btobastian.javacord.entities.message.Message;

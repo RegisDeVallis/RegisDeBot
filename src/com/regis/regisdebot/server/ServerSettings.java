@@ -1,14 +1,17 @@
-package com.regis.regisdebot.command.settings;
+package com.regis.regisdebot.server;
 
 import com.regis.regisdebot.user.MyUser;
 import com.regis.regisdebot.util.XML;
 import de.btobastian.javacord.entities.Server;
 import de.btobastian.javacord.entities.User;
+import de.btobastian.javacord.entities.message.Message;
+import de.btobastian.javacord.entities.permissions.Role;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nu.xom.*;
+import java.lang.String;
 
 public class ServerSettings 
 {
@@ -17,8 +20,8 @@ public class ServerSettings
     
     //settings
     String rules = "";
-    
-    //other stuff
+    public ArrayList<Integer> rankNums = new ArrayList();
+    public ArrayList<String> rankIDs = new ArrayList();
     public ArrayList<String> mutes = new ArrayList();
     
     public ServerSettings(Server server)
@@ -33,11 +36,11 @@ public class ServerSettings
             save();
     }
     
-    private void save()
+    public void save()
     {
         Element xml = new Element("settings");
         
-        for(int i = 0; i < 4; i++)
+        for(int i = 0; i < 5; i++)
         {
             Element data = new Element("setting");
             Attribute name = new Attribute("name", "filler");
@@ -67,6 +70,18 @@ public class ServerSettings
                         elem.appendChild(mute);
                         data.appendChild(elem);
                     }
+                    break;
+                
+                case 4:
+                    name.setValue("ranks");
+                    for(int x = 0; x < rankIDs.size(); x++)
+                    {
+                        Element elem = new Element("rank");
+                        elem.addAttribute(new Attribute("num", Integer.toString(rankNums.get(x))));
+                        elem.appendChild(rankIDs.get(x));
+                        data.appendChild(elem);
+                    }
+                    break;
             }
             
             data.addAttribute(name);
@@ -119,6 +134,12 @@ public class ServerSettings
             if(child.string("name").equals("mutes"))
                 for(XML mute : child.children("mute"))
                     mutes.add(mute.content());
+            if(child.string("name").equals("ranks"))
+                for(XML rank : child.children("rank"))
+                {
+                    rankNums.add(Integer.parseInt(rank.string("num")));
+                    rankIDs.add(rank.content());
+                }
         }
         
         try {
@@ -152,5 +173,12 @@ public class ServerSettings
             mutes.remove(user.getId());
             save();
         }
+    }
+    
+    public void addRank(int rank, String id)
+    {
+        rankNums.add(rank);
+        rankIDs.add(id);
+        save();
     }
 }

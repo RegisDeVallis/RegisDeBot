@@ -1,12 +1,13 @@
 package com.regis.regisdebot;
 
+import com.regis.regisdebot.server.SetRules;
 import com.regis.regisdebot.command.xp.*;
 import com.regis.regisdebot.command.leaderboard.*;
 import com.regis.regisdebot.command.link.*;
 import com.regis.regisdebot.command.*;
 import com.regis.regisdebot.command.feedback.*;
 import com.regis.regisdebot.command.guide.*;
-import com.regis.regisdebot.command.settings.*;
+import com.regis.regisdebot.server.rank.*;
 import de.btobastian.javacord.DiscordAPI;
 import de.btobastian.javacord.entities.message.Message;
 
@@ -126,6 +127,14 @@ public class ParseCommand
             new UnMute(message);
         else if(command.equals("getid"))
             new GetID(message);
+        else if(command.equals("setrank"))
+            new SetRank(message);
+        else if(command.equals("removerank"))
+            new RemoveRank(message);
+        else if(command.equals("updateranks"))
+            new UpdateRanks(message);
+        else if(command.equals("rankinfo"))
+            new RankInfo(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             

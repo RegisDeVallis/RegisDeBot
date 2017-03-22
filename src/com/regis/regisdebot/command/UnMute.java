@@ -1,7 +1,7 @@
 package com.regis.regisdebot.command;
 
 import com.regis.regisdebot.botutil.GetName;
-import com.regis.regisdebot.command.settings.ServerSettings;
+import com.regis.regisdebot.server.ServerSettings;
 import de.btobastian.javacord.entities.Server;
 import de.btobastian.javacord.entities.message.Message;
 import de.btobastian.javacord.entities.permissions.Role;
