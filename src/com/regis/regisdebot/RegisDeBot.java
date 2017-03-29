@@ -43,13 +43,14 @@ public class RegisDeBot
                 //start message
                 if(testBot)
                     for(Server server : api.getServers())
+                        //if(server.getId())
                         for(Channel channel : server.getChannels())
                             channel.sendMessage("I'm awake!");
                 
                 //check if any new users joined while offline
                 for(Server server : api.getServers())
                     for(User user : server.getMembers())
-                        myUser = new MyUser(user, server);
+                        new MyUser(user, server);
                 
                 
                 /**

@@ -8,6 +8,7 @@ import com.regis.regisdebot.command.link.*;
 import com.regis.regisdebot.command.*;
 import com.regis.regisdebot.command.feedback.*;
 import com.regis.regisdebot.command.guide.*;
+import com.regis.regisdebot.command.parts.*;
 import com.regis.regisdebot.server.rank.*;
 import de.btobastian.javacord.DiscordAPI;
 import de.btobastian.javacord.entities.message.Message;
@@ -148,6 +149,18 @@ public class ParseCommand
             new GetRoleID(message);
         else if(command.equals("globalmsg"))
             new GlobalMsg(message);
+        else if(command.equals("servermessages"))
+            new ServerMessages(message);
+        else if(command.equals("globalmessages"))
+            new GlobalMessages(message);
+        else if(command.equals("serverid"))
+            new ServerID(message);
+        else if(command.equals("parts"))
+            new Parts(message);
+        else if(command.equals("addparts"))
+            new AddParts(message);
+        else if(command.equals("removeparts"))
+            new RemoveParts(message);
         else
             message.reply("I'm sorry but I dont recognize that command.");
             

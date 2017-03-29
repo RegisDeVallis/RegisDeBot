@@ -3,6 +3,8 @@ package com.regis.regisdebot.command;
 import com.regis.regisdebot.botutil.LongMessage;
 import com.regis.regisdebot.command.leaderboard.CheckUserMsgLeaderboard;
 import de.btobastian.javacord.entities.message.Message;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Help 
 {
@@ -73,13 +75,21 @@ public class Help
                 + "~lenny - Lenny face. \n"
                 + "~online - See how many members are online. \n"
                 + "~members - View the member count. \n"
+                + "~servermessages - View the message server count. \n"
+                + "~globalmessages - View the total message count. \n"
+                + "~serverid - Get the server ID. \n"
+                + "~parts - View yours or someone elses part list. \n"
+                + "~parts NAME - View the titled part list of you or somebody elses. \n"
+                + "~addparts - Add a part list. Usage: ~addparts \"NAME\" LIST \n"
+                + "~removeparts - Remove a part list. Usage: ~removeparts NAME \n"
                 + "```";
                 
-        if(message.reply(text).isDone())
-            message.reply(text2);
-        
-        
-        
-        
+        message.reply(text);
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Help.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        message.reply(text2);
     }
 }

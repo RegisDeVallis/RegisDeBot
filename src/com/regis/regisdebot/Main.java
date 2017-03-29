@@ -17,6 +17,7 @@ public class Main
     public static void main(String[] args)
     {
         //build the console
+        System.out.println("Starting.");
         console = new Console();
         console.setTitle("RegisDeBot");
         console.setSize(700, 500);

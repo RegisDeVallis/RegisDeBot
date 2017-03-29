@@ -14,7 +14,7 @@ public class RemoveRank
         else
         {
             Server server = message.getChannelReceiver().getServer();
-            if(new Rank(server, message.getAuthor()).rank == 10)
+            if(new Rank(server, message.getAuthor()).rank >= 10)
             {
                 ServerSettings settings = new ServerSettings(server);
                 

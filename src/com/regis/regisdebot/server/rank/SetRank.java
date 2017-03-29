@@ -15,7 +15,7 @@ public class SetRank
         
         if(!text.trim().contains(" "))
             message.reply("Usage: `~setrank RANKNUM ROLENAME`");
-        else if(new Rank(server, message.getAuthor()).get() == 10)
+        else if(new Rank(server, message.getAuthor()).get() >= 10)
         {
             String r = text.substring(text.indexOf(" ") + 1);
             r = r.substring(0, r.indexOf(" "));

@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,6 +40,9 @@ public class MyUser
     private String dateJoined;
     private long messages = 0;
     private int rank = 0;
+    
+    private ArrayList<String> partNames = new ArrayList();
+    private ArrayList<String> partLists = new ArrayList();
     
     public MyUser(User user, Server server)
     {
@@ -67,7 +71,7 @@ public class MyUser
         //have fun reading this
         Element xml = new Element("user");
         
-        for(int i = 0; i < 7; i++)
+        for(int i = 0; i < 8; i++)
         {
             Element data = new Element("data");
             Attribute name = new Attribute("name", "filler");
@@ -107,6 +111,17 @@ public class MyUser
                 case 6:
                     name.setValue("rank");
                     data.appendChild(Integer.toString(rank));
+                    break;
+                    
+                case 7:
+                    name.setValue("parts");
+                    for(int x = 0; x < partNames.size(); x++)
+                    {
+                        Element elem = new Element("partList");
+                        elem.addAttribute(new Attribute("name", partNames.get(x)));
+                        elem.appendChild(partLists.get(x));
+                        data.appendChild(elem);
+                    }
                     break;
                     
             }
@@ -168,6 +183,12 @@ public class MyUser
                 messages = Long.parseLong(child.content());
             if(child.string("name").equals("rank"))
                 rank = Integer.parseInt(child.content());
+            if(child.string("name").equals("parts"))
+                for(XML partList : child.children("partList"))
+                {
+                    partLists.add(partList.content());
+                    partNames.add(partList.string("name"));
+                }
         }
         
         try {
@@ -252,5 +273,33 @@ public class MyUser
     {
         rank = r;
         save();
+    }
+    
+    public void addParts(String name, String parts)
+    {
+        partNames.add(name.toLowerCase());
+        partLists.add(parts);
+        save();
+    }
+    
+    public void removeParts(String name)
+    {
+        name = name.toLowerCase();
+        if(partNames.contains(name))
+        {
+            int index = partNames.indexOf(name);
+            partNames.remove(index);
+            partLists.remove(index);
+        }
+    }
+    
+    public ArrayList<String> getPartNames()
+    {
+        return partNames;
+    }
+    
+    public ArrayList<String> getPartLists()
+    {
+        return partLists;
     }
 }

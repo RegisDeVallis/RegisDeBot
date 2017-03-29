@@ -10,7 +10,7 @@ public class Echo
     {
         String text  = message.getContent().substring(message.getContent().indexOf(" "));
         
-        if(!text.contains("@"))
+        if(!text.contains("@") || !text.contains("~"))
             message.reply(text);
     }
 }
