@@ -8,9 +8,11 @@ public class Echo
 {
     public Echo(Message message)
     {
-        String text  = message.getContent().substring(message.getContent().indexOf(" "));
+        String text  = message.getContent().substring(message.getContent().indexOf(" ") + 1);
         
-        if(!text.contains("@") || !text.contains("~"))
-            message.reply(text);
+        if(!text.startsWith("~"))
+            if(message.getMentions().size() == 0)
+                if(!text.contains("@everyone") && !text.contains("@here"))
+                    message.reply(text);
     }
 }
